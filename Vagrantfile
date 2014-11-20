@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :shell, path: "bootstrap.sh"
   config.vm.provision "file", source: "~/.gitconfig", destination: ".gitconfig"
 
-  #config.vm.synced_folder "spksrc/", "/home/vagrant/spksrc"
+  config.vm.synced_folder "packages/", "/home/vagrant/spksrc/packages", create: true
 
   config.vm.hostname = "spksrc"
 
