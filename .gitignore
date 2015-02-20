@@ -1,0 +1,5 @@
+# Vagrant
+.vagrant/
+
+# ignore synced folders
+packages/
