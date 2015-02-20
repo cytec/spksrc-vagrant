@@ -9,6 +9,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
+  # local package cache
+  if Vagrant.has_plugin?("vagrant-cachier")
+    config.cache.scope = :box
+  end
+
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "chef/debian-7.6-i386"
   config.vm.provision :shell, path: "bootstrap.sh"
